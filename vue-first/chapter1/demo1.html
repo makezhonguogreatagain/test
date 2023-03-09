@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+</head>
+<body>
+<div id="app"> <!#view层 从模板中取数据>
+    <!{{message}}>
+    <span v-bind:title="message"> <!#鼠标悬停显示信息>
+        nihao
+    </span>
+</div>
+<div id="app2">
+    <h1>{{message}}</h1> <!虚拟dom >
+</div>
+
+<script>
+var vm = new Vue({
+        el : "#app",
+        data:{
+        message: "hello vue"
+        }
+        });
+
+
+</script>
+</body>
+</html>

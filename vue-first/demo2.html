@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app"> <!#view层 从模板中取数据>
+    <!--    <!{{message}}>-->
+    <h1 v-if="type==='A'">A</h1>
+    <h1 v-else-if="type==='B'">B</h1>
+    <h1 v-else>C</h1>
+    <!--    <span v-bind:title="message"> <!#鼠标悬停显示信息>-->
+    <!--        nihao-->
+    <!--    </span>-->
+</div>
+<!--<div id="app2">-->
+<!--    <h1>{{message}}</h1> <!虚拟dom >-->
+<!--</div>-->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script>
+var vm = new Vue({
+        el : "#app",
+        data:{
+        type:'A'
+
+        }
+        });
+
+
+
+</script>
+</body>
+</html>

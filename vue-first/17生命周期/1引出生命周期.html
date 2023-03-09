@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <!-- 引入vue-->
+        <script type="text/javascript" src="../js/vue.js"></script>
+     </head>
+     <body>
+        <div id="root">    <!#view层 从模板中取数据>
+           <!--    <!{{message}}>-->
+           <h2 v-if="a">你好啊</h2>
+           <h2 :style="{opacity}">欢迎学习vue</h2>
+        </div>
+     </body>
+     <script type="text/javascript">
+         Vue.config.productionTip = false   //防止vue在启动时生成生产提示
+        new Vue({
+            el:'#root',
+            data:{
+                opacity:1,
+                a:false
+            },
+            methods: {
+                
+            },
+            // vue完成模板解析并把真实dom元素调入界面（挂载完毕）再调用mounted
+            mounted(){
+                
+                     setInterval(()=>{
+                        this.opacity -= 0.01
+                        if(this.opacity<=0)  this.opacity=1
+                    },16)
+                }
+            
+        })
+        //通过外部定时器实现
+        // setInterval(()=>{
+        //     vm.opacity-=0.01
+        //     if(vm.opacity<=0)  vm.opacity=1
+        // },16)
+      </script>
+    </html>

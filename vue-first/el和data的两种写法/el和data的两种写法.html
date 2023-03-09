@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!-- <div id="app"> <!#view层 从模板中取数据>
+       <!{{message}}>
+     <h1 v-if="type==='A'">A</h1> -->
+    <!-- <h1 v-else-if="type==='B'">B</h1> -->
+    <!-- <h1 v-else>C</h1> --> 
+    <!--    <span v-bind:title="message "> <!#鼠标悬停显示信息>-->
+    <!--        nihao-->
+    <!--    </span>-->
+<!-- </div> -->
+<div id="root"> 
+<h1>你好，帅强</h1>
+</div>
+<!--<div id="app2">-->
+<!--    <h1>{{message}}</h1> <!虚拟dom >-->
+<!--</div>-->
+
+<script>
+//  const v = new Vue({
+//         // el : "#root",
+//         // data的第一种写法：对象式
+//         data:{
+//         name:'帅强'
+//         }
+        
+           
+//         });
+//         console.log(v)  // 第二种写法：挂载
+//         v.$mount('#root')
+
+         new Vue({
+        el : "#root",
+        // data的第一种写法：对象式
+        // data:{
+        // name:'帅强'
+        // }
+        // data的第二种写法：函数返回式
+        // vue管理的函数一定不要写成箭头函数（->）
+            data:function(){
+                console.log('@@@',this)// this 是vue实例对象
+                return{
+                    name:'帅强'
+                }
+            }
+           
+        });
+</script>
+</body>
+</html>

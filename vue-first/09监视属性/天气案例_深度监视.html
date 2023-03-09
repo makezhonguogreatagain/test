@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <title>天气案例_监视属性</title>
+        <!-- 引入vue-->
+        <script type="text/javascript" src="../js/vue.js"></script>
+     </head>
+     <body>
+        <div id="root">    <!#view层 从模板中取数据>
+           <!--    <!{{message}}>-->
+           <h2>今天天气很{{info}}</h2>
+           <button @click="changeweather"> 切换天气 </button>
+           <hr>
+           <h2>a的值是{{numbers.a}}</h2>
+           <button @click="numbers.a++">点我a++</button>
+        </div>
+     </body>
+     <script type="text/javascript">
+         Vue.config.productionTip = false   //防止vue在启动时生成生产提示
+        const vm = new Vue({
+            el:'#root',
+            data:{
+                isHot:true,
+                numbers:{
+                    a:1,
+                    b:2
+                }
+            },
+            computed:{
+                info(){
+                    return this.isHot ? '炎热':'凉爽'
+                }
+            },
+            methods: {
+                changeweather(){
+                    this.isHot=! this.isHot
+                }
+            },
+            watch:{
+                // isHot:{
+                //     //初始化时调用handler
+                //     // immediate:true,    
+                //     //当isHot改变时，handler被调用
+                //     handler(newValue,oldValue){
+                //         console.log('isHot被修改',newValue,oldValue)
+                //     }
+                // },
+                // 'numbers.a':{
+                //     handler(newValue,oldValue){
+                //         console.log('a被修改',newValue,oldValue)
+                //     }
+                // },
+                numbers:{
+                    //监视多级结构中所有属性的变化
+                    deep:true,
+                    handler(){
+                        console.log('numbers改变了 ')
+                    }
+                }
+            },
+        })
+        vm.$watch('isHot',{
+            //初始化时调用handler
+            // immediate:true,    
+            //当isHot改变时，handler被调用
+            handler(newValue,oldValue){
+                console.log('isHot被修改',newValue,oldValue)
+                }
+            })
+      </script>
+    </html>

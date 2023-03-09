@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <!-- 引入vue-->
+        <script type="text/javascript" src="../js/vue.js"></script>
+     </head>
+     <body>
+        <!-- 准备一个容器 -->
+        <!-- 
+            1,通过vm对象来代理data对象中属性的操作（读/写）
+            2，数据代理更加方便操作data中的数据
+            3，原理是通过Object.defineProperty()把data对象中的所有属性添加到vm上、
+                为每一个添加到vm的属性，都指定一个getter/setter，
+                在getter/setter中操作data中对应的属性
+         -->
+        <div id="root">    <!#view层 从模板中取数据>
+           <!--    <!{{message}}>-->
+            <h2>学校名称：{{name}}</h2>
+            <h2>学校地址：{{address}}</h2>
+        </div>
+     </body>
+     <script type="text/javascript">
+        Vue.config.productionTip = false   //防止vue在启动时生成生产提示
+       
+        const vm = new Vue({
+                el:'#root',
+                data:{
+                    name:'qinghua',
+                    address:'海淀区'
+                }
+            })
+      </script>
+    </html>

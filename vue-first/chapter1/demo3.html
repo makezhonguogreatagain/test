@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app"> <!#view层 从模板中取数据>
+    <l1 v-for="(item,index) in items">
+        {{item.message}}--{{index}}
+    </l1>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script>
+var vm = new Vue({
+        el : "#app",
+        data:{
+            items:[
+            {message:'shuaiqqiang'},
+            {message:'nihao'},
+            {message:'nihaoshuai'}
+            ]
+
+
+        }
+        });
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app"> <!#view层 从模板中取数据>
+    <!--    <span></span>-->
+
+    <!--    <l1 v-for="(item,index) in items">-->
+    <!--        {{item.message}}&#45;&#45;{{index}}-->
+    <!--    </l1>-->
+<!--    输入文本：<textarea type="text" v-model="message"></textarea>-->
+    选择
+    <select v-model="selected">
+        <option value=""disabled>--请选择--</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+    </select>
+    <span>value:{{selected}}</span>
+<!--    性别：-->
+<!--    <input type ='radio' name="sex" value="男" v-model="shuaiqiang">  男-->
+<!--    <input type ='radio' name="sex" value="女" v-model="shuaiqiang">  女-->
+<!--&lt;!&ndash;    {{message}}&ndash;&gt;-->
+<!--    <p>-->
+<!--        选中的是：{{shuaiqiang}}-->
+<!--    </p>-->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+<script>
+var vm = new Vue({
+        el : "#app",
+        data:{
+            selected :''
+
+        }
+        });
+
+
+</script>
+</body>
+</html>

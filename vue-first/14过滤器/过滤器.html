@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <!-- 引入vue-->
+        <script type="text/javascript" src="../js/vue.js"></script>
+     </head>
+     <body>
+        <div id="root">    <!#view层 从模板中取数据>
+           <!--    <!{{message}}>-->
+           <h2>显示格式化后的时间</h2>
+           <h3>现在是{{time | timeFormater}}</h3>
+        </div>
+     </body>
+     <script type="text/javascript">
+         Vue.config.productionTip = false   //防止vue在启动时生成生产提示
+         new Vue({
+            el:"#root",
+            data:{
+                time:1677482415749
+            },
+            filters:{
+                timeFormater:function(){
+                    
+                }
+            }
+         })
+      </script>
+    </html>

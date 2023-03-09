@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let data={
+            name:'帅强',
+            addres:'北京'
+        }
+        // 创建一个监视的实例对象，用来监视data中属性的变化
+        const obj = new Observer(data)
+        function Observer(obj){
+            //把对象中所有的属性变成一个数组
+            const keys = Object.keys(obj)
+            // console.log(keys)
+            keys.forEach((k)=>{
+                Object.defineProperty(this,k,{
+                    get(){
+                        return obj[k]
+                    },
+                    set(val){
+                        obj[k]=val
+                    }
+                })
+            })
+        }
+    </script>
+</body>
+</html>
